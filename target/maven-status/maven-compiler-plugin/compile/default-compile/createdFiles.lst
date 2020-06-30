@@ -1,1 +1,4 @@
+pageobject\dashboardPage.class
+pageobject\loginPage.class
 com\techground\Main.class
+pageobject\basePage.class

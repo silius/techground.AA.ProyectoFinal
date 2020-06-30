@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Login Regression Suite" duration-ms="14826" started-at="2020-06-05T20:59:29 CST" finished-at="2020-06-05T20:59:44 CST">
+  <suite name="Login Suite" duration-ms="17270" started-at="2020-06-19T20:55:27 CST" finished-at="2020-06-19T20:55:45 CST">
     <groups>
       <group name="login">
-        <method signature="loginTest.allow_user_to_login(java.lang.String, java.lang.String)[pri:0, instance:loginTest@14f5da2c]" name="allow_user_to_login" class="loginTest"/>
+        <method signature="loginTest.allow_user_to_login()[pri:1, instance:loginTest@5ef0d29e]" name="allow_user_to_login" class="loginTest"/>
+        <method signature="loginTest.do_not_allow_user_to_do_login()[pri:2, instance:loginTest@55787112]" name="do_not_allow_user_to_do_login" class="loginTest"/>
       </group> <!-- login -->
     </groups>
-    <test name="allow_user_to_login" duration-ms="14826" started-at="2020-06-05T20:59:29 CST" finished-at="2020-06-05T20:59:44 CST">
+    <test name="do_allow_user_to_login" duration-ms="11003" started-at="2020-06-19T20:55:27 CST" finished-at="2020-06-19T20:55:38 CST">
       <class name="loginTest">
-        <test-method status="PASS" signature="allow_user_to_login(java.lang.String, java.lang.String)[pri:0, instance:loginTest@14f5da2c]" name="allow_user_to_login" duration-ms="14439" started-at="2020-06-05T20:59:29 CST" finished-at="2020-06-05T20:59:43 CST">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginTest@5ef0d29e]" name="setUpTest" is-config="true" duration-ms="7565" started-at="2020-06-19T20:55:27 CST" finished-at="2020-06-19T20:55:35 CST">
           <params>
             <param index="0">
               <value>
@@ -22,11 +23,57 @@
                 <![CDATA[test123]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="allow_user_to_login()[pri:1, instance:loginTest@5ef0d29e]" name="allow_user_to_login" duration-ms="1930" started-at="2020-06-19T20:55:35 CST" finished-at="2020-06-19T20:55:37 CST">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- allow_user_to_login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:loginTest@5ef0d29e]" name="tearDown" is-config="true" duration-ms="1111" started-at="2020-06-19T20:55:37 CST" finished-at="2020-06-19T20:55:38 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- loginTest -->
-    </test> <!-- allow_user_to_login -->
-  </suite> <!-- Login Regression Suite -->
+    </test> <!-- do_allow_user_to_login -->
+    <test name="do_not_allow_user_to_do_login" duration-ms="6153" started-at="2020-06-19T20:55:38 CST" finished-at="2020-06-19T20:55:45 CST">
+      <class name="loginTest">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginTest@55787112]" name="setUpTest" is-config="true" duration-ms="4010" started-at="2020-06-19T20:55:38 CST" finished-at="2020-06-19T20:55:42 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[alexgf08@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="do_not_allow_user_to_do_login()[pri:2, instance:loginTest@55787112]" name="do_not_allow_user_to_do_login" duration-ms="1093" started-at="2020-06-19T20:55:42 CST" finished-at="2020-06-19T20:55:44 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- do_not_allow_user_to_do_login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:loginTest@55787112]" name="tearDown" is-config="true" duration-ms="1037" started-at="2020-06-19T20:55:44 CST" finished-at="2020-06-19T20:55:45 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- loginTest -->
+    </test> <!-- do_not_allow_user_to_do_login -->
+  </suite> <!-- Login Suite -->
 </testng-results>

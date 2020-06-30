@@ -1,0 +1,8 @@
+{
+  "dataset": [
+    {"email": "m@null.net",
+      "password": "test12s3"},
+    {"email": "zm@null.net",
+      "password": "test12s3"}
+  ]
+}

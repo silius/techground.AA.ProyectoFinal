@@ -1,38 +1,48 @@
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
-import org.testng.annotations.Parameters;
 import org.testng.Assert;
-import org.testng.asserts.*;
+import pageobject.loginPage;
+import pageobject.dashboardPage;
+import pageobject.headerPage;
+import dataproviders.usersProvider;
+import pojo.loginData;
 
-public class loginTest {
+public class loginTest extends baseTest {
 
-    private WebDriver driver;
 
-    @Parameters({"username","password"})
-    @Test(groups = {"login"})
-    public void allow_user_to_login(String username,String password) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
 
-        driver.get("https://demo.opencart.com/index.php?route=account/login");
+    //@Test(groups = {"login"}, priority=1)
+    @Test(dataProvider = "getUserDataFromJson", dataProviderClass = usersProvider.class)
+    public void allow_user_to_login(loginData logind) throws InterruptedException {
+        loginPage login= new loginPage(driver.getCurrentUrl(),driver);
+        headerPage header = new headerPage(driver);
+        dashboardPage dashboardPage= new dashboardPage(driver);
+        header.goToLogin();
+        login.insertEmail(logind.getEmail());
+        login.insertPassword(logind.getPassword());
+        login.clickLoginButton();
 
-        WebElement usernameTextBox = driver.findElement(By.id("input-email"));
-        WebElement passwordTextBox = driver.findElement(By.id("input-password"));
-        WebElement loginButton = driver.findElement(By.xpath("//input[@type='submit']"));
+        login.waitUntilElement(dashboardPage.showDashboard());
+        Assert.assertEquals(dashboardPage.showDashboard().isDisplayed(),true);
 
-        usernameTextBox.sendKeys(username);
-        passwordTextBox.sendKeys(password);
-        loginButton.click();
-
-        Thread.sleep(3000);
-
-        WebElement dashboard = driver.findElement(By.id("account-account"));
-        Assert.assertEquals(driver.findElement(By.id("account-account")).isDisplayed(),true);
-
-        driver.quit();
     }
+    //@Test(groups = {"login"}, priority=2, invocationCount = 0)
+    @Test(dataProvider = "getBadUserDataFromJson", dataProviderClass = usersProvider.class)
+    public void do_not_allow_user_to_do_login(loginData logind){
+        loginPage login= new loginPage(driver.getCurrentUrl(),driver);
+        headerPage header = new headerPage(driver);
+        header.goToLogin();
+        login.insertEmail(logind.getEmail());
+        login.insertPassword(logind.getPassword());
+        login.clickLoginButton();
+        //Explicit wait
+        login.waitUntilElement(login.displayAlertMessage());
+
+        Assert.assertEquals(login.displayAlertMessage().isDisplayed(),true);
+    }
+
 }
