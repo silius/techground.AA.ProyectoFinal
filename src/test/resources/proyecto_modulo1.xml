@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Proyecto Suite">
+    <test name="Caso de prueba 1">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="testcase1.newUserTest">
+
+            </class>
+        </classes>
+    </test>
+
+</suite>
