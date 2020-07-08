@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Proyecto Final">
+    <test name="Caso de Prueba 1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcase1.registerTest" />
+        </classes>
+    </test>
+    <test name="Caso de Prueba 2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcase2.cartTest" />
+        </classes>
+    </test>
+    <test name="Caso de Prueba 3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcase3.priceCurrencyTest" />
+        </classes>
+    </test>
+
+</suite>

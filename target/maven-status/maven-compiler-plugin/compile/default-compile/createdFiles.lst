@@ -1,4 +1,9 @@
 pageobject\dashboardPage.class
+pageobject\headerPage.class
+pojo\loginData.class
 pageobject\loginPage.class
-com\techground\Main.class
 pageobject\basePage.class
+pageobject\newAccountPage.class
+pageobject\registerPage.class
+com\techground\Main.class
+pojo\userRegister.class

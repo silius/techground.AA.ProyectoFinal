@@ -1,2 +1,8 @@
-loginTest.class
 baseTest.class
+dataproviders\usersProvider$1.class
+common\baseTest.class
+loginTest.class
+dataproviders\usersProvider$3.class
+testcase1\newUserTest.class
+dataproviders\usersProvider.class
+dataproviders\usersProvider$2.class

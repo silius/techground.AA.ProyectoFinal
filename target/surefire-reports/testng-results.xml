@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Login Suite" duration-ms="17270" started-at="2020-06-19T20:55:27 CST" finished-at="2020-06-19T20:55:45 CST">
+  <suite name="Proyecto Suite" duration-ms="12325" started-at="2020-07-03T01:12:18 CST" finished-at="2020-07-03T01:12:31 CST">
     <groups>
-      <group name="login">
-        <method signature="loginTest.allow_user_to_login()[pri:1, instance:loginTest@5ef0d29e]" name="allow_user_to_login" class="loginTest"/>
-        <method signature="loginTest.do_not_allow_user_to_do_login()[pri:2, instance:loginTest@55787112]" name="do_not_allow_user_to_do_login" class="loginTest"/>
-      </group> <!-- login -->
+      <group name="sanity">
+        <method signature="newUserTest.createNewUser(pojo.userRegister)[pri:0, instance:testcase1.newUserTest@4275c20c]" name="createNewUser" class="testcase1.newUserTest"/>
+      </group> <!-- sanity -->
     </groups>
-    <test name="do_allow_user_to_login" duration-ms="11003" started-at="2020-06-19T20:55:27 CST" finished-at="2020-06-19T20:55:38 CST">
-      <class name="loginTest">
-        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginTest@5ef0d29e]" name="setUpTest" is-config="true" duration-ms="7565" started-at="2020-06-19T20:55:27 CST" finished-at="2020-06-19T20:55:35 CST">
+    <test name="Caso de prueba 1" duration-ms="12325" started-at="2020-07-03T01:12:18 CST" finished-at="2020-07-03T01:12:31 CST">
+      <class name="testcase1.newUserTest">
+        <test-method status="PASS" signature="setUpTest(java.lang.String)[pri:0, instance:testcase1.newUserTest@4275c20c]" name="setUpTest" is-config="true" duration-ms="6167" started-at="2020-07-03T01:12:19 CST" finished-at="2020-07-03T01:12:25 CST">
           <params>
             <param index="0">
-              <value>
-                <![CDATA[m@null.net]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="2">
               <value>
                 <![CDATA[chrome]]>
               </value>
@@ -32,48 +21,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="allow_user_to_login()[pri:1, instance:loginTest@5ef0d29e]" name="allow_user_to_login" duration-ms="1930" started-at="2020-06-19T20:55:35 CST" finished-at="2020-06-19T20:55:37 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- allow_user_to_login -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:loginTest@5ef0d29e]" name="tearDown" is-config="true" duration-ms="1111" started-at="2020-06-19T20:55:37 CST" finished-at="2020-06-19T20:55:38 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- loginTest -->
-    </test> <!-- do_allow_user_to_login -->
-    <test name="do_not_allow_user_to_do_login" duration-ms="6153" started-at="2020-06-19T20:55:38 CST" finished-at="2020-06-19T20:55:45 CST">
-      <class name="loginTest">
-        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginTest@55787112]" name="setUpTest" is-config="true" duration-ms="4010" started-at="2020-06-19T20:55:38 CST" finished-at="2020-06-19T20:55:42 CST">
+        <test-method status="PASS" signature="createNewUser(pojo.userRegister)[pri:0, instance:testcase1.newUserTest@4275c20c]" name="createNewUser" duration-ms="4009" started-at="2020-07-03T01:12:25 CST" description="Registers a new user account" data-provider="getNewUserDataFromJson" finished-at="2020-07-03T01:12:29 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[alexgf08@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[chrome]]>
+                <![CDATA[pojo.userRegister@373052b5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="do_not_allow_user_to_do_login()[pri:2, instance:loginTest@55787112]" name="do_not_allow_user_to_do_login" duration-ms="1093" started-at="2020-06-19T20:55:42 CST" finished-at="2020-06-19T20:55:44 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- do_not_allow_user_to_do_login -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:loginTest@55787112]" name="tearDown" is-config="true" duration-ms="1037" started-at="2020-06-19T20:55:44 CST" finished-at="2020-06-19T20:55:45 CST">
+        </test-method> <!-- createNewUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcase1.newUserTest@4275c20c]" name="tearDown" is-config="true" duration-ms="1633" started-at="2020-07-03T01:12:29 CST" finished-at="2020-07-03T01:12:31 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- loginTest -->
-    </test> <!-- do_not_allow_user_to_do_login -->
-  </suite> <!-- Login Suite -->
+      </class> <!-- testcase1.newUserTest -->
+    </test> <!-- Caso de prueba 1 -->
+  </suite> <!-- Proyecto Suite -->
 </testng-results>

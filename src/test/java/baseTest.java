@@ -7,12 +7,9 @@ import org.testng.annotations.*;
 
 public class baseTest {
     public WebDriver driver;
-    //public String username;
-    //public String password;
     String baseURL="https://demo.opencart.com/";
 
     @BeforeMethod(alwaysRun = true)
-    //@Parameters({"username","password","browser"})
     @Parameters({"browser"})
     public void setUpTest(@Optional("chrome")String browser){
         if(browser.equals("firefox")){
@@ -23,9 +20,6 @@ public class baseTest {
             driver = new ChromeDriver();
         }
         driver.get(baseURL);
-      //  this.username = username;
-        // this.password = password;
-
     }
 
 
